@@ -221,7 +221,7 @@
 														$total_after = $total_after_coupon + $session_fee;
 														echo number_format($total_after,0,',','.').' vnđ';
 													}elseif(($session_fee == null) && ($session_coupon == null)){
-														$total_after = $total;
+														$total_after = $total + $fee;
 														echo number_format($total_after,0,',','.').' vnđ';
 													}
 												?>

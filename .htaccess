@@ -21,6 +21,6 @@
 </IfModule>
 <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css)$">
 <IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
+    Header add Access-Control-Allow-Origin "*"
 </IfModule>
 </FilesMatch>

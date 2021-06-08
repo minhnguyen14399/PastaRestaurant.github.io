@@ -52,7 +52,7 @@
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>
-          
+         @endforeach
         </tbody>
       </table>
     </div>

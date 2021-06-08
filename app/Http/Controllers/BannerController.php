@@ -48,12 +48,12 @@ class BannerController extends Controller
                 
                 $banner->save();
                 Session::put('message','Thêm banner thành công');
-                return Redirect::to('list-banner');
+                return Redirect::to('manage-banner');
                
             }
             else{
                 Session::put('message','Thêm banner không thành công - File ảnh không hợp lệ hoặc chưa có');
-                return Redirect::to('list-banner');
+                return Redirect::to('add-banner');
             }
             
         }

@@ -36,7 +36,7 @@
             $i = 0;
         ?>
         <tbody>
-         
+         @foreach($delivery as $key => $deli)
           <?php
             $i++;
             
@@ -46,9 +46,9 @@
             <td>ok</td>
             <td>ok</td>
             <td>ok</td>
-            <td>10000 vnđ</td>
+            <td>{{ number_format($deli->fee_feeship, 0, ',', '.') }} vnđ</td>
             <td>
-              <a onclick="return confirm('Bạn có chắc muốn xóa phí vận chuyển này không?')" href="" class="active styling-edit" ui-toggle-class="">
+              <a onclick="return confirm('Bạn có chắc muốn xóa phí vận chuyển này không?')" href="{{URL::to('/delete-delivery/'.$deli->fee_id)}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>

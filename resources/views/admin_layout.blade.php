@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('public/backend/ckeditor/ckeditor.js')}}"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-        fetch_delivery();
+        
         function fetch_delivery(){
             var _token = $('input[name="_token"]').val();
             $.ajax({
@@ -47,6 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 }
             });
         }
+        fetch_delivery();
         $('.add_delivery').click(function(){
             var city = $('.city').val();
             var province = $('.province').val();

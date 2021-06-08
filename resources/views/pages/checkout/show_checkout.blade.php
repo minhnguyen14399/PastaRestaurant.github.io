@@ -199,7 +199,7 @@
 											</li>
 											@else
 												<?php
-													$fee = 15000;
+													$fee = 10000;
 												?>
 											<li>Phí vận chuyển : <span> {{number_format($fee,0,',','.')}} vnđ</span>
 												

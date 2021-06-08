@@ -101,7 +101,9 @@ class UserController extends Controller
         }
         $admin->admin_role = $admin->admin_role;
         $admin->save();
-        return redirect()->back()->with('message','Cập nhật thông tin thành công');
+        Session::put('message','Cập nhật thông tin thành công');
+        $adminn = Admin::where('admin_id',$admin_id)->get();
+        return view('admin.users.show_info')->with('admin',$adminn);
     }
     public function save_user(AdminRequest $request){
         $this->AuthLogin();

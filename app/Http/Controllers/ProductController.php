@@ -59,7 +59,7 @@ class ProductController extends Controller
                 $get_name_image = $get_image->getClientOriginalName();
                 $name_image = current(explode('.',$get_name_image));
                 $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-                $get_image->move('public/upload/product',$new_image);
+                $get_image->move('https://github.com/minhnguyen14399/PastaRestaurant.github.io/tree/master/public/upload/product',$new_image);
                 $data['product_image']= $new_image;
                 DB::table('tbl_product')->insert($data);
                 Session::put('message','Thêm sản phẩm thành công');
@@ -116,7 +116,7 @@ class ProductController extends Controller
                 $get_name_image = $get_image->getClientOriginalName();
                 $name_image = current(explode('.',$get_name_image));
                 $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-                $get_image->move('public/upload/product',$new_image);
+                $get_image->move('https://github.com/minhnguyen14399/PastaRestaurant.github.io/tree/master/public/upload/product',$new_image);
                 $data['product_image']= $new_image;
                 DB::table('tbl_product')->where('product_id',$pro_decryted)->update($data);
                 Session::put('message','Cập nhật sản phẩm thành công');

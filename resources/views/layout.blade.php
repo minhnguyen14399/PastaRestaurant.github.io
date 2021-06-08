@@ -12,7 +12,7 @@
 	<link  rel="icon" type="image/x-icon" href="" />
 	<title>MiniDeli | Pasta Restaurant</title>
 	<!-----SEO------->
-    <link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="public/frontend/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/price-range.css')}}" rel="stylesheet">

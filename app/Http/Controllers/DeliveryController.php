@@ -96,9 +96,9 @@ class DeliveryController extends Controller
                     
                     $output .= '
                             <tr>
-                                <td>' . $name_city->name_city . '</td>
-                                <td>' . $name_province->name_quanhuyen . '</td>
-                                <td>' . $name_wards->name_xaphuong . '</td>
+                                <td> ok </td>
+                                <td> ok </td>
+                                <td> ok </td>
                                 <td contenteditable data-feeship_id="' . $fee->fee_id . '" class="fee_feeship_edit">' . number_format($fee->fee_feeship, 0, ',', '.') . '</td>
                             </tr>
                             ';

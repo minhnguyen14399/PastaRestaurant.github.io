@@ -31,7 +31,10 @@ class BannerController extends Controller
     public function insert_banner(Request $request){
         $this->AuthLogin();
         $data = $request->all();
-
+        $banner = new Banner();
+        $banner->banner_name = $data['banner_name'];
+        $banner->banner_desc = $data['banner_desc'];
+        $banner->banner_status = $data['banner_status'];
         $get_image = $request->file('banner_image');
         if($get_image){
             $extendsion = $get_image->getClientOriginalExtension();
@@ -41,20 +44,16 @@ class BannerController extends Controller
                 $name_image = current(explode('.',$get_name_image));
                 $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
                 $get_image->move('public/upload/banner',$new_image);
-                
-                $banner = new Banner();
-                $banner->banner_name = $data['banner_name'];
                 $banner->banner_image = $new_image;
-                $banner->banner_desc = $data['banner_desc'];
-                $banner->banner_status = $data['banner_status'];
+                
                 $banner->save();
                 Session::put('message','Thêm banner thành công');
-                return Redirect::to('add-banner');
+                return Redirect::to('list-banner');
                
             }
             else{
                 Session::put('message','Thêm banner không thành công - File ảnh không hợp lệ hoặc chưa có');
-                return Redirect::to('add-banner');
+                return Redirect::to('list-banner');
             }
             
         }

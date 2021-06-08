@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-----SEO------>
+    <base href="https://minideli-restaurant.herokuapp.com/">
 	<meta name="description" content="">
 	<link rel="canonical" href="https://minideli-restaurant.herokuapp.com/trang-chu" />
 	<meta name="keywords" content="Pasta Restaurant,Nhà hàng Pasta,Pasta"/>

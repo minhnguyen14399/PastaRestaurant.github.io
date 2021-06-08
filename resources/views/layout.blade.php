@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-----SEO------>
 	<meta name="description" content="">
-	<link rel="canonical" href="http://localhost:8080/PastaRestaurant/trang-chu" />
+	<link rel="canonical" href="https://minideli-restaurant.herokuapp.com/trang-chu" />
 	<meta name="keywords" content="Pasta Restaurant,Nhà hàng Pasta,Pasta"/>
 	<meta name="robots" content="INDEX,FOLLOW"/>
     <meta name="author" content="">
 	<link  rel="icon" type="image/x-icon" href="" />
 	<title>MiniDeli | Pasta Restaurant</title>
 	<!-----SEO------->
-    <link href="public/frontend/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
     <link href="{{asset('public/frontend/css/price-range.css')}}" rel="stylesheet">
@@ -182,7 +182,7 @@
 									<button type="button" class="btn btn-default get">Đặt hàng ngay</button>
 								</div>
 								<div class="col-sm-6">
-									<img alt="Quảng cáo" src="http://localhost:8080/PastaRestaurant/public/upload/banner/{{$ban->banner_image}}" class="img img-responsive" alt="" />
+									<img alt="Quảng cáo" src="https://minideli-restaurant.herokuapp.com/public/upload/banner/{{$ban->banner_image}}" class="img img-responsive" alt="" />
 									
 								</div>
 							</div>

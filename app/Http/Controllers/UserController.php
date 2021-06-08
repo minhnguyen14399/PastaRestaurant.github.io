@@ -54,7 +54,8 @@ class UserController extends Controller
         $admin = Admin::where('admin_id',$admin_id)->first();
         $admin->admin_role=0;
         $admin->save();
-        return redirect()->back()->with('message','Thu hồi quyền thành công');
+        Session::put('message','Thu hồi quyền thành công');
+        return Redirect::to('all-user');
     }
     public function add_roles($admin_id){
         $this->AuthLogin();
@@ -112,7 +113,7 @@ class UserController extends Controller
         $admin->admin_password = md5($data['admin_password']);
         $admin->admin_role = 0;
         $admin->save();
-        Session::put('message','Cấp quyền thành công');
+        Session::put('message','Thêm thành viên thành công');
         return Redirect::to('all-user');
     }
     public function import_user(Request $request){

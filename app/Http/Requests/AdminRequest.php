@@ -24,7 +24,7 @@ class AdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'admin_name'=>'required|alpha',
+            'admin_name'=>'required',
             'admin_email'=>'required|email',
             'admin_password'=>'required',
             'admin_phone'=>'required|numeric|digits_between:10,11',
@@ -34,7 +34,7 @@ class AdminRequest extends FormRequest
     {
         return[
             'admin_name.required'=>'Thông tin bắt buộc điền',
-            'admin_name.alpha'=>'Không chứa ký tự đặc biết và số',
+            
             'admin_email.required'=>'Thông tin bắt buộc điền',
             'admin_email.email'=>'Nhập đúng email',
             'admin_password.required'=>'Thông tin bắt buộc điền',

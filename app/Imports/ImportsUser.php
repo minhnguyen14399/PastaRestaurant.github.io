@@ -18,8 +18,8 @@ class ImportsUser implements ToModel
             'admin_email' => $row[0],
             'admin_password' => $row[1],
             'admin_name' => $row[2],
-            'admin_phone' => $row[4],
-            'admin_role' => $row[5],
+            'admin_phone' => $row[3],
+            'admin_role' => $row[4],
         ]);
     }
 }

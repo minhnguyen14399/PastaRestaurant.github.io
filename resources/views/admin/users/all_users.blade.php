@@ -23,8 +23,8 @@
                     <tr>
                         <th>STT</th>
                         <th>Tên nhân viên</th>
-                        <th>Phone</th>
                         <th>Email</th>
+                        <th>Phone</th>
                         <th>Chức vụ</th>
                         <th></th>
                     </tr>

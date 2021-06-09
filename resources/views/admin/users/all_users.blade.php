@@ -62,6 +62,13 @@
                     </tr>
                     @endforeach
                     <tr>
+                        <td colspan="5">
+                            <center>
+                                {!! $admin->render() !!}
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
                         <td colspan="3"> <!-- IMPORT DATA -->
                         <form action="{{url('import-user')}}" method="POST" enctype="multipart/form-data">
                             @csrf

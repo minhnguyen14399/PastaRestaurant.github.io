@@ -96,7 +96,7 @@ class MaterialProduct extends Controller
     {
         $this->AuthLogin();
         $product = DB::table('tbl_product')->orderby('product_id', 'desc')->get();
-        $material = DB::table('tbl_material')->orderby('material_id', 'desc')->get();
+        $material = DB::table('tbl_material')->orderby('material_id', 'desc')->where('material_status',0)->get();
         return view('admin.add_material_details')->with('product', $product)->with('material', $material);
     }
     public function save_material_details(MaterialDetailsRequest $request)

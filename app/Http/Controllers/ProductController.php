@@ -26,7 +26,7 @@ class ProductController extends Controller
     
     public function add_product(){
         $this->AuthLogin();
-        $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
+        $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->where('category_status',0)->get();
         
         return view('admin.add_product')->with('cate_product',$cate_product);
     }

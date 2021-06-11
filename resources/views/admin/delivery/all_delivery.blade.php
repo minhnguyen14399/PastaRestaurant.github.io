@@ -36,8 +36,8 @@
             $i = 0;
         ?>
         <tbody>
-         @foreach($delivery as $key => $deli)
-          <?php
+            <?php
+            foreach($delivery as $key => $deli){
             $i++;
             
           ?>
@@ -52,7 +52,11 @@
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>
-         @endforeach
+          
+          <?php
+          }
+          ?>
+         
         </tbody>
       </table>
     </div>

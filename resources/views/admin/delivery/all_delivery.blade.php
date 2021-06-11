@@ -49,7 +49,6 @@
             <td>{{ $province->name_quanhuyen }}</td>
             <td>{{ $wards->name_xaphuong }}</td>
             <td>{{ $deli->fee_feeship }} vnđ</td>
-            <td>{{number_format($deli->fee_feeship,0,',','.')}} </td>
             <td>
               <a onclick="return confirm('Bạn có chắc muốn xóa phí vận chuyển này không?')" href="{{URL::to('/delete-delivery/')}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>

@@ -24,7 +24,7 @@ class CustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            'customer_name'=>'required|alpha',
+            'customer_name'=>'required',
             'customer_email'=>'required|email',
             'customer_password'=>'required',
             'customer_phone'=>'required|numeric|digits_between:10,11',
@@ -34,7 +34,6 @@ class CustomerRequest extends FormRequest
     {
         return[
             'customer_name.required'=>'Thông tin bắt buộc điền',
-            'customer_name.alpha'=>'Không chứa ký tự đặc biết và số',
             'customer_email.required'=>'Thông tin bắt buộc điền',
             'customer_email.email'=>'Nhập đúng email',
             'customer_password.required'=>'Thông tin bắt buộc điền',

@@ -16,12 +16,12 @@
                 echo '<span class="text-alert" style="color:red;">' . $message . '</span>';
                 Session::put('message', null);
             }
-            $i =0;
+            
             ?>
             <table class="table table-striped b-t b-light">
                 <thead>
                     <tr>
-                        <th>STT</th>
+                        
                         <th>Tên nhân viên</th>
                         <th>Email</th>
                         <th>Phone</th>
@@ -31,11 +31,9 @@
                 </thead>
                 <tbody>
                     @foreach($nhanvien as $key => $user)
-                    <?php
-                    $i++;
-                    ?>
+                    
                     <tr>
-                        <td><label>{{ $i }}</label></td>
+                        
                         <td>{{ $user->admin_name }}</td>
                         <td>{{ $user->admin_email }}</td>
                         <td>{{ $user->admin_phone }}</td>

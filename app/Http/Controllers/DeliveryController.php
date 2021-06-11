@@ -29,8 +29,8 @@ class DeliveryController extends Controller
     }
     public function all_delivery(){
         $this->AuthLogin();
-        $delivery = Feeship::orderby('fee_id','ASC')->get();
-        return view('admin.delivery.all_delivery')->with('delivery',$delivery);
+        $aldelivery = Feeship::orderby('fee_id','ASC')->get();
+        return view('admin.delivery.all_delivery')->with('delivery',$aldelivery);
     }
     public function delete_delivery($fee_id){
         $this->AuthLogin();

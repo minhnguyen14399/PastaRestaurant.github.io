@@ -36,10 +36,9 @@
             $i = 0;
         ?>
         <tbody>
-            
+            @foreach($all_delivery as $key => $deli)
             <?php
             $i++;
-            
             ?>
           <tr>
             <td>{{ $i }}</td>
@@ -52,7 +51,7 @@
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>
-          
+            @endforeach
         </tbody>
       </table>
     </div>

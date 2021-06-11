@@ -39,12 +39,15 @@
             @foreach($all_delivery as $key => $deli)
             <?php
             $i++;
+            $city = City::find($deli->fee_matp);
+            $province = Province::find($deli->fee_maqh);
+            $wards = Wards::find($deli->fee_xaid);
             ?>
           <tr>
             <td>{{ $i }}</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>ok</td>
+            <td>{{ $city->name_city }}</td>
+            <td>{{ $province->name_quanhuyen }}</td>
+            <td>{{ $wards->name_xaphuong }}</td>
             <td>{{ $deli->fee_feeship }} vnđ</td>
             <td>
               <a onclick="return confirm('Bạn có chắc muốn xóa phí vận chuyển này không?')" href="{{URL::to('/delete-delivery/')}}" class="active styling-edit" ui-toggle-class="">

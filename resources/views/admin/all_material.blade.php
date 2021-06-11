@@ -20,7 +20,7 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            
+            <th>STT</th>
             <th>Tên nguyên vật liệu</th>
             <th>Số lượng tồn</th>
             <th>Đơn vị đo</th>
@@ -28,10 +28,16 @@
             <th style="width:30px;"></th>
           </tr>
         </thead>
+        <?php
+            $i = 0;
+        ?>
         <tbody>
           @foreach($all_material as $key => $material_pro)
+          <?php
+            $i++;
+          ?>
           <tr>
-            <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+            <td>{{ $i}}</td>
             <td>{{ $material_pro->material_name }}</td>
             <td>{{ $material_pro->material_qty }}</td>
             <td>

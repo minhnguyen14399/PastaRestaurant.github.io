@@ -99,7 +99,7 @@ class DeliveryController extends Controller
                                 <td> ok </td>
                                 <td> ok </td>
                                 <td> ok </td>
-                                <td contenteditable data-feeship_id="' . $fee->fee_id . '" class="fee_feeship_edit">' . number_format($fee->fee_feeship, 0, ',', '.') . '</td>
+                                <td contenteditable data-feeship_id="' . $fee->fee_id . '" class="fee_feeship_edit">' . $fee->fee_feeship . '</td>
                             </tr>
                             ';
                 }

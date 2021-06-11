@@ -33,7 +33,126 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{asset('public/backend/js/raphael-min.js')}}"></script>
 <script src="{{asset('public/backend/js/morris.js')}}"></script>
 <script src="{{asset('public/backend/ckeditor/ckeditor.js')}}"></script>
-
+<script type="text/javascript">
+	$(document).ready(function(){
+        fetch_delivery();
+        function fetch_delivery(){
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url : "{{url('/select-feeship')}}",
+                method: 'POST',
+                data:{_token:_token},
+                success:function(data){
+                    $('#load_delivery').html(data);    
+                }
+            });
+        }
+        $('.add_delivery').click(function(){
+            var city = $('.city').val();
+            var province = $('.province').val();
+            var wards = $('.wards').val();
+            var fee_ship = $('.fee_ship').val();
+            var _token = $('input[name="_token"]').val();
+            if(fee_ship < 0){
+                alert('Phí vận chuyển phải lớn hơn hoặc bằng 0');
+            }else{
+                $.ajax({
+                    url : "{{url('/insert-delivery')}}",
+                    method: 'POST',
+                    data:{city:city, province:province, wards:wards, fee_ship:fee_ship,_token:_token},
+                    success:function(data){
+                    alert('Thêm phí vận chuyển thành công');
+                    location.reload();
+                    }
+                });
+            }
+        });
+        $(document).on('blur','.fee_feeship_edit',function(){
+            var feeship_id = $(this).data('feeship_id');
+            var fee_value = $(this).text();
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url : "{{url('/update-delivery')}}",
+                method: 'POST',
+                data:{feeship_id:feeship_id,fee_value:fee_value,_token:_token},
+                success:function(data){
+                    fetch_delivery();     
+                }
+            });
+        });
+        $('.choose').on('change',function(){
+            var action = $(this).attr('id');
+            var ma_id = $(this).val();
+            var _token = $('input[name="_token"]').val();
+            var result = '';
+            if(action=='city'){
+                result = 'province';
+            }else{
+                result = 'wards';
+            }
+            $.ajax({
+                url : "{{url('/select-delivery')}}",
+                method: 'POST',
+                data:{action:action,ma_id:ma_id,_token:_token},
+                success:function(data){
+                   $('#'+result).html(data);     
+                }
+            });
+        });
+    });
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.choose').on('change',function(){
+            var action = $(this).attr('id');
+            var ma_id = $(this).val();
+            var _token = $('input[name="_token"]').val();
+            var result = '';
+            if(action=='city'){
+                result = 'province';
+            }else{
+                result = 'wards';
+            }
+            $.ajax({
+                url : "{{url('/select-delivery')}}",
+                method: 'POST',
+                data:{action:action,ma_id:ma_id,_token:_token},
+                success:function(data){
+                   $('#'+result).html(data);     
+                }
+            });
+        });
+	});
+	</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+        fetch_material_details();
+        function fetch_material_details(){
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url : "{{url('/show-material-details')}}",
+                method: 'POST',
+                data:{_token:_token},
+                success:function(data){
+                    $('#load_material_details').html(data);    
+                }
+            });
+        }
+        $(document).on('blur','.mate_details_edit',function(){
+            var mate_details_id = $(this).data('mate_details_id');
+            var mate_details_qty = $(this).text();
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url : "{{url('/update-material-details')}}",
+                method: 'POST',
+                data:{mate_details_id:mate_details_id,mate_details_qty:mate_details_qty,_token:_token},
+                success:function(data){
+                    fetch_material_details();   
+                }
+            });
+        });
+    });
+</script>
 </head>
 <body>
 <section id="container">
@@ -314,126 +433,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!-- //calendar -->
-    <script type="text/javascript">
-	$(document).ready(function(){
-        
-        function fetch_delivery(){
-            var _token = $('input[name="_token"]').val();
-            $.ajax({
-                url : "{{url('/select-feeship')}}",
-                method: 'POST',
-                data:{_token:_token},
-                success:function(data){
-                    $('#load_delivery').html(data);    
-                }
-            });
-        }
-        fetch_delivery();
-        $('.add_delivery').click(function(){
-            var city = $('.city').val();
-            var province = $('.province').val();
-            var wards = $('.wards').val();
-            var fee_ship = $('.fee_ship').val();
-            var _token = $('input[name="_token"]').val();
-            if(fee_ship < 0){
-                alert('Phí vận chuyển phải lớn hơn hoặc bằng 0');
-            }else{
-                $.ajax({
-                    url : "{{url('/insert-delivery')}}",
-                    method: 'POST',
-                    data:{city:city, province:province, wards:wards, fee_ship:fee_ship,_token:_token},
-                    success:function(data){
-                    alert('Thêm phí vận chuyển thành công');
-                    location.reload();
-                    }
-                });
-            }
-        });
-        $(document).on('blur','.fee_feeship_edit',function(){
-            var feeship_id = $(this).data('feeship_id');
-            var fee_value = $(this).text();
-            var _token = $('input[name="_token"]').val();
-            $.ajax({
-                url : "{{url('/update-delivery')}}",
-                method: 'POST',
-                data:{feeship_id:feeship_id,fee_value:fee_value,_token:_token},
-                success:function(data){
-                    fetch_delivery();     
-                }
-            });
-        });
-        $('.choose').on('change',function(){
-            var action = $(this).attr('id');
-            var ma_id = $(this).val();
-            var _token = $('input[name="_token"]').val();
-            var result = '';
-            if(action=='city'){
-                result = 'province';
-            }else{
-                result = 'wards';
-            }
-            $.ajax({
-                url : "{{url('/select-delivery')}}",
-                method: 'POST',
-                data:{action:action,ma_id:ma_id,_token:_token},
-                success:function(data){
-                   $('#'+result).html(data);     
-                }
-            });
-        });
-    });
-</script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.choose').on('change',function(){
-            var action = $(this).attr('id');
-            var ma_id = $(this).val();
-            var _token = $('input[name="_token"]').val();
-            var result = '';
-            if(action=='city'){
-                result = 'province';
-            }else{
-                result = 'wards';
-            }
-            $.ajax({
-                url : "{{url('/select-delivery')}}",
-                method: 'POST',
-                data:{action:action,ma_id:ma_id,_token:_token},
-                success:function(data){
-                   $('#'+result).html(data);     
-                }
-            });
-        });
-	});
-	</script>
-<script type="text/javascript">
-	$(document).ready(function(){
-        fetch_material_details();
-        function fetch_material_details(){
-            var _token = $('input[name="_token"]').val();
-            $.ajax({
-                url : "{{url('/show-material-details')}}",
-                method: 'POST',
-                data:{_token:_token},
-                success:function(data){
-                    $('#load_material_details').html(data);    
-                }
-            });
-        }
-        $(document).on('blur','.mate_details_edit',function(){
-            var mate_details_id = $(this).data('mate_details_id');
-            var mate_details_qty = $(this).text();
-            var _token = $('input[name="_token"]').val();
-            $.ajax({
-                url : "{{url('/update-material-details')}}",
-                method: 'POST',
-                data:{mate_details_id:mate_details_id,mate_details_qty:mate_details_qty,_token:_token},
-                success:function(data){
-                    fetch_material_details();   
-                }
-            });
-        });
-    });
-</script>
+    
 </body>
 </html>

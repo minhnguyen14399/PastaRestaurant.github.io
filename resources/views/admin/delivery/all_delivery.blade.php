@@ -45,7 +45,7 @@
             <td>ok</td>
             <td>ok</td>
             <td>ok</td>
-            <td> vnđ</td>
+            <td>{{ number_format($deli->fee_feeship, 0, ',', '.') }} vnđ</td>
             <td>
               <a onclick="return confirm('Bạn có chắc muốn xóa phí vận chuyển này không?')" href="{{URL::to('/delete-delivery/')}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>

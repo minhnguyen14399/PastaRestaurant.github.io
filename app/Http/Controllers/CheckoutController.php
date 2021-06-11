@@ -39,7 +39,7 @@ class CheckoutController extends Controller
         $data['customer_phone'] = $request->customer_phone;
         $data['customer_email'] = $request->customer_email;
         $data['customer_password'] = md5($request->customer_password); 
-        $data['customer_role'] = 0;
+        $data['customer_status'] = 0;
 
         $customer_id = DB::table('tbl_customer')->insertGetId($data);
         Session::put('customer_id',$customer_id);

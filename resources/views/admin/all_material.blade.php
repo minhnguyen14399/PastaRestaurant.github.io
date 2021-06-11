@@ -20,11 +20,7 @@
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
-            <th style="width:20px;">
-              <label class="i-checks m-b-none">
-                <input type="checkbox"><i></i>
-              </label>
-            </th>
+            
             <th>Tên nguyên vật liệu</th>
             <th>Số lượng tồn</th>
             <th>Đơn vị đo</th>

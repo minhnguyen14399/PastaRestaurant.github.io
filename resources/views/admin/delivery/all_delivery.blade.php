@@ -50,7 +50,7 @@
             <td>{{ $wards->name_xaphuong }}</td>
             <td>{{ $deli->fee_feeship }} vnđ</td>
             <td>
-              <a onclick="return confirm('Bạn có chắc muốn xóa phí vận chuyển này không?')" href="{{URL::to('/delete-delivery/')}}" class="active styling-edit" ui-toggle-class="">
+              <a onclick="return confirm('Bạn có chắc muốn xóa phí vận chuyển này không?')" href="{{URL::to('/delete-delivery/'.$deli->fee_id)}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>

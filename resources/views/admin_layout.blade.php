@@ -53,9 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             var wards = $('.wards').val();
             var fee_ship = $('.fee_ship').val();
             var _token = $('input[name="_token"]').val();
-            if(fee_ship < 0){
-                alert('Phí vận chuyển phải lớn hơn hoặc bằng 0');
-            }else{
+            if(fee_ship > 0 && is_int(fee_ship)){
                 $.ajax({
                     url : "{{url('/insert-delivery')}}",
                     method: 'POST',
@@ -65,20 +63,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     location.reload();
                     }
                 });
+            }else{
+                alert('Phí vận chuyển phải là số và lớn hơn hoặc bằng 0');
             }
         });
         $(document).on('blur','.fee_feeship_edit',function(){
             var feeship_id = $(this).data('feeship_id');
             var fee_value = $(this).text();
             var _token = $('input[name="_token"]').val();
-            $.ajax({
-                url : "{{url('/update-delivery')}}",
-                method: 'POST',
-                data:{feeship_id:feeship_id,fee_value:fee_value,_token:_token},
-                success:function(data){
-                    fetch_delivery();     
-                }
-            });
+            if(fee_value > 0 && is_int(fee_value)){
+                $.ajax({
+                    url : "{{url('/update-delivery')}}",
+                    method: 'POST',
+                    data:{feeship_id:feeship_id,fee_value:fee_value,_token:_token},
+                    success:function(data){
+                        fetch_delivery();     
+                    }
+                });
+            }else{
+                alert('Phí vận chuyển phải là số và lớn hơn hoặc bằng 0');
+                fetch_delivery();
+            }
         });
         $('.choose').on('change',function(){
             var action = $(this).attr('id');

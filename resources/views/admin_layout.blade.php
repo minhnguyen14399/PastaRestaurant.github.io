@@ -264,7 +264,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-taxi"></i>
-                        <span>Mã vận chuyển</span>
+                        <span>Phí vận chuyển</span>
                     </a>
                     <ul class="sub">
 						<li><a href="{{URL::to('/delivery')}}">Quản lý vận chuyển</a></li>

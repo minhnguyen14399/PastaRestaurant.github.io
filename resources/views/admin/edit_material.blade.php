@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Cập nhật thương hiệu sản phẩm
+                            Cập nhật nguyên vật liệu
                         </header>
                         <div class="panel-body">
                             <?php
@@ -35,8 +35,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Số lượng tồn</label>
-                                    <textarea style="resize: none" rows="5" class="form-control" name="material_qty" 
-                                    id="exampleInputPassword1" >{{$edit_value->material_qty}}</textarea>
+                                    <input type="text" value="{{$edit_value->material_qty}}" name="material_name" class="form-control" id="exampleInputEmail1" 
+                                    placeholder="Số lượng tồn">
                                     @error('material_qty')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror

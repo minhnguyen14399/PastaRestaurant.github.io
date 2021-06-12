@@ -41,15 +41,17 @@
                         <td>{{ $ord->created_at }}</td>
                         <td>
                             <?php
-                            if ($ord->order_status == 1) {
-                                echo 'Đang chờ xác nhận';
-                            } elseif ($ord->order_status == 2) {
-                                echo 'Đã xác nhận';
-                            } elseif ($ord->order_status == 3) {
-                                echo 'Đã hoàn thành';
-                            } elseif ($ord->order_status == 0) {
-                                echo 'Đã hủy';
-                            }
+                                if ($ord->order_status == 1) {
+                                    echo 'Đang chờ xác nhận';
+                                } elseif ($ord->order_status == 2) {
+                                    echo 'Đã xác nhận';
+                                } elseif ($ord->order_status == 3) {
+                                    echo 'Đã chế biến xong';
+                                } elseif ($ord->order_status == 4) {
+                                    echo 'Đã hoàn thành';
+                                } elseif ($ord->order_status == 0) {
+                                    echo 'Đã hủy';
+                                }
                             ?>
                         </td>
                         <td>

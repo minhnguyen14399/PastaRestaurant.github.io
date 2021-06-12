@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <section class="panel">
             <header class="panel-heading">
-                Cấp quyền cho nhân viên
+                Thêm nhân viên
             </header>
             <div class="panel-body">
                 <?php

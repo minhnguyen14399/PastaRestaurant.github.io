@@ -179,20 +179,23 @@
                         <select name="order_status" class="form-control input-sm m-bot15 order_details">
                             <option value="{{$ord->order_status}}">
                             <?php
-                            if ($ord->order_status == 1) {
-                                echo 'Đang chờ xác nhận';
-                            } elseif ($ord->order_status == 2) {
-                                echo 'Đã xác nhận';
-                            } elseif ($ord->order_status == 3) {
-                                echo 'Đã hoàn thành';
-                            } elseif ($ord->order_status == 0) {
-                                echo 'Đã hủy';
-                            }
+                                if ($ord->order_status == 1) {
+                                    echo 'Đang chờ xác nhận';
+                                } elseif ($ord->order_status == 2) {
+                                    echo 'Đã xác nhận';
+                                } elseif ($ord->order_status == 3) {
+                                    echo 'Đã chế biến xong';
+                                } elseif ($ord->order_status == 4) {
+                                    echo 'Đã hoàn thành';
+                                } elseif ($ord->order_status == 0) {
+                                    echo 'Đã hủy';
+                                }
                             ?>
                             </option>
                             <option value="1">Đang chờ xác nhận</option>
                             <option value="2">Đã xác nhận</option>
-                            <option value="3">Đã hoàn thành</option>
+                            <option value="3">Đã chế biến xong</option>
+                            <option value="4">Đã hoàn thành</option>
                             <option value="0">Đã hủy</option>
                         </select>
                         <button type="submit" name="update_material" class="btn btn-info">Cập nhật trạng thái</button>
@@ -204,11 +207,13 @@
                             } elseif ($ord->order_status == 2) {
                                 echo 'Đã xác nhận';
                             } elseif ($ord->order_status == 3) {
+                                echo 'Đã chế biến xong';
+                            } elseif ($ord->order_status == 4) {
                                 echo 'Đã hoàn thành';
                             } elseif ($ord->order_status == 0) {
                                 echo 'Đã hủy';
                             }
-                            ?>
+                        ?>
                     </td>
                         @endif
                     <td colspan="2">

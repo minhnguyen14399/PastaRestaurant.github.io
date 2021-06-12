@@ -175,7 +175,7 @@
                         <strong>Trạng thái đơn hàng:</strong>
                         <form role="form" action="{{URL::to('/update-status/'.$ord->order_code)}}" method="post">
                         {{ csrf_field() }}
-                        @if(($ord->order_status == 1) || ($ord->order_status == 2))
+                        @if(($ord->order_status == 1) || ($ord->order_status == 2) || ($ord->order_status == 3))
                         <select name="order_status" class="form-control input-sm m-bot15 order_details">
                             <option value="{{$ord->order_status}}">
                             <?php

@@ -56,7 +56,7 @@
                             ?>
                         </td>
                         <td>
-                        @if($ord->order_status == 1)
+                        @if($ord->order_status == 1 || $ord->order_status == 2)
                         <form role="form" action="{{URL::to('/del-order/'.$ord->order_code)}}" method="post">
                         {{ csrf_field() }}
                             <input type="hidden" name="order_status" value="0"/>

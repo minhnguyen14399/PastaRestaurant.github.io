@@ -25,7 +25,7 @@ class AdminRequest extends FormRequest
     {
         return [
             'admin_name'=>'required',
-            'admin_email'=>'required|email',
+            'admin_email'=>'required|email|unique:tbl_customer',
             'admin_password'=>'required',
             'admin_phone'=>'required|numeric|digits_between:10,11',
         ];
@@ -37,6 +37,7 @@ class AdminRequest extends FormRequest
             
             'admin_email.required'=>'Thông tin bắt buộc điền',
             'admin_email.email'=>'Nhập đúng email',
+            'admin_email.unique'=>'Email đã được sử dụng',
             'admin_password.required'=>'Thông tin bắt buộc điền',
             'admin_phone.required'=>'Thông tin bắt buộc điền',
             'admin_phone.numeric'=>'Phải là số',

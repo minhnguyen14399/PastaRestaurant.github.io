@@ -25,7 +25,7 @@ class AdminRequest extends FormRequest
     {
         return [
             'admin_name'=>'required',
-            'admin_email'=>'required|email|unique:tbl_customer',
+            'admin_email'=>'required|email|unique:tbl_admin',
             'admin_password'=>'required',
             'admin_phone'=>'required|numeric|digits_between:10,11',
         ];

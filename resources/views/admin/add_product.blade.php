@@ -28,21 +28,21 @@
                         @endif
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên sản phẩm</label>
-                            <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
+                            <input type="text" name="product_name" value="{{old('product_name')}}" class="form-control" id="exampleInputEmail1" placeholder="Tên sản phẩm">
                             @error('product_name')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Giá sản phẩm</label>
-                            <input type="text" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Giá sản phẩm">
+                            <input type="text" name="product_price" value="{{old('product_price')}}" class="form-control" id="exampleInputEmail1" placeholder="Giá sản phẩm">
                             @error('product_price')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Số lượng tồn</label>
-                            <input type="text" name="product_quantity" class="form-control" id="exampleInputEmail1" placeholder="Số lượng sản phẩm">
+                            <input type="text" name="product_quantity" value="{{old('product_quantity')}}" class="form-control" id="exampleInputEmail1" placeholder="Số lượng sản phẩm">
                             @error('product_quantity')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -56,14 +56,14 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mô tả sản phẩm</label>
-                            <textarea style="resize: none" rows="5" class="form-control" name="product_desc" id="pro" placeholder="Mô tả sản phẩm"></textarea>
+                            <textarea style="resize: none" rows="5" value="{{old('product_desc')}}" class="form-control" name="product_desc" id="pro" placeholder="Mô tả sản phẩm"></textarea>
                             @error('product_desc')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nguyên vật liệu</label>
-                            <textarea style="resize: none" rows="5" class="form-control" name="product_content" id="pro1" placeholder="Nội dung sản phẩm"></textarea>
+                            <textarea style="resize: none" rows="5" value="{{old('product_content')}}" class="form-control" name="product_content" id="pro1" placeholder="Nội dung sản phẩm"></textarea>
                             @error('product_content')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror

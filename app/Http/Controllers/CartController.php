@@ -28,17 +28,21 @@ class CartController extends Controller
             $check = 0;
             foreach ($cart as $key => $val)
                 if ($val['product_id'] == $data['cart_product_id']) {
-                    $check = 1;
-                    $cart[$key] = array(
-                        'session_id' => $val['session_id'],
-                        'product_name' => $val['product_name'],
-                        'product_id' => $val['product_id'],
-                        'product_image' => $val['product_image'],
-                        'product_qty' => $val['product_qty'] + $data['cart_product_qty'],
-                        'product_price' => $val['product_price'],
-                        'product_quantity' => $val['product_quantity'],
-                    );
-                    Session::put('cart', $cart);
+                    if(($val['product_qty'] + $data['cart_product_qty'])< $data['cart_product_quantity']){
+                        $check = 1;
+                        $cart[$key] = array(
+                            'session_id' => $val['session_id'],
+                            'product_name' => $val['product_name'],
+                            'product_id' => $val['product_id'],
+                            'product_image' => $val['product_image'],
+                            'product_qty' => $val['product_qty'] + $data['cart_product_qty'],
+                            'product_price' => $val['product_price'],
+                            'product_quantity' => $val['product_quantity'],
+                        );
+                        Session::put('cart', $cart);
+                    }else{
+                        dd('Thêm sản phẩm không thành công');
+                    }
                 }
             if ($check == 0) {
                 $item_cart = [

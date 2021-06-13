@@ -29,28 +29,28 @@
                         @endif
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên nhân viên</label>
-                            <input type="text" name="admin_name" class="form-control" id="exampleInputEmail1">
+                            <input type="text" name="admin_name" value="{{old('admin_name')}}" class="form-control" id="exampleInputEmail1">
                             @error('admin_name')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="text" name="admin_email" class="form-control" id="exampleInputEmail1" >
+                            <input type="text" name="admin_email" value="{{old('admin_email')}}" class="form-control" id="exampleInputEmail1" >
                             @error('admin_email')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Password </label>
-                            <input type="text" name="admin_password" class="form-control" id="exampleInputEmail1" >
+                            <input type="text" name="admin_password" value="{{old('admin_password')}}" class="form-control" id="exampleInputEmail1" >
                             @error('admin_password')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Số điện thoại</label>
-                            <input type="text" name="admin_phone" class="form-control" id="exampleInputEmail1" >
+                            <input type="text" name="admin_phone" value="{{old('admin_phone')}}" class="form-control" id="exampleInputEmail1" >
                             @error('admin_phone')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror

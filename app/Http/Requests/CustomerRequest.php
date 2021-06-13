@@ -25,7 +25,7 @@ class CustomerRequest extends FormRequest
     {
         return [
             'customer_name'=>'required',
-            'customer_email'=>'required|email',
+            'customer_email'=>'required|email|unique:tbl_customer',
             'customer_password'=>'required',
             'customer_phone'=>'required|numeric|digits_between:10,11',
         ];
@@ -36,6 +36,7 @@ class CustomerRequest extends FormRequest
             'customer_name.required'=>'Thông tin bắt buộc điền',
             'customer_email.required'=>'Thông tin bắt buộc điền',
             'customer_email.email'=>'Nhập đúng email',
+            'customer_email.unique'=>'Email đã có người sử dụng',
             'customer_password.required'=>'Thông tin bắt buộc điền',
             'customer_phone.required'=>'Thông tin bắt buộc điền',
             'customer_phone.numeric'=>'Phải là số',
